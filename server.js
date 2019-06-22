@@ -31,7 +31,7 @@ app.get('/profile/:id',(req,res)=>{
 })
 
 app.get('/',(req,res)=>{
-	res.send(postgres.users);
+	res.send("it is working");
 })
 app.post("/signin",(req,res)=>{
 	postgres.select('email','hash').from("login")
@@ -54,7 +54,7 @@ app.post("/signin",(req,res)=>{
 
 
 app.listen(process.env.PORT || 3000,()=>{
-	console.log("app is running on port 3000")
+	console.log(`app is running on port ${process.env.PORT}`)
 })
 
 
