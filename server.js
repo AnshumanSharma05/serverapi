@@ -7,10 +7,8 @@ const knex=require("knex")
 const postgres=knex({
   client: 'pg',
   connection: {
-    host : 'postgresql-animated-91219',
-    user : 'postgres',
-    password : 'test',
-    database : 'bel'
+    host : process.env.DATABASE_URL,
+    ssl: true
   }
 });
 
